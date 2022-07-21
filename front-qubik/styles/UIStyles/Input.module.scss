@@ -1,0 +1,16 @@
+@import "styles/sass-utils/indexUtils.scss";
+
+.search {
+    border: none;
+    border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px;
+    box-shadow: $box-shadow;
+    display: $inline-flex;
+    padding-left: 12px;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.search:hover {
+    background: $hover-search;
+}

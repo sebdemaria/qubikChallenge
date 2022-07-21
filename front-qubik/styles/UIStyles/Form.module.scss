@@ -1,0 +1,7 @@
+@import "styles/sass-utils/indexUtils.scss";
+
+.form {
+    display: $inline-flex;
+    justify-content: $justify-align-center;
+    width: 60%;
+}

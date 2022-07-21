@@ -1,0 +1,24 @@
+@import "styles/sass-utils/indexUtils.scss";
+
+.find {
+    align-content: $justify-align-center;
+    border: none;
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
+    box-shadow: $box-shadow;
+    padding: 5px 5px 6px 5px;
+    width: 40px;
+}
+
+.buy {
+    background-color: $color-buy-blue !important;
+    font-size: 20px;
+    transition: 0.5s;
+    width: 100%;
+}
+
+.buy:hover {
+    background: $background-color-white !important;
+    border: 5px, solid, $color-buy-blue;
+    color: $color-buy-blue;
+}
