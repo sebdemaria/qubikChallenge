@@ -1,0 +1,21 @@
+@import "styles/sass-utils/indexUtils.scss";
+
+.header {
+    background-color: $primaryYellow;
+    box-shadow: $box-shadow;
+    display: $inline-flex;
+    justify-content: $justify-align-center;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.anchor {
+    height: 0;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6em;
+}

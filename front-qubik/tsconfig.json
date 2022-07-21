@@ -1,20 +1,27 @@
 {
-  "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true
-  },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/screens/SearchByIdResult., "components/screens/httpScreens/500.jsx"j, "components/screens/httpScreens/400.jsx", "components/Header/index.jsx", "components/screens/httpScreens/404.jsx"sx", "compo, "components/Breadcrum/Breadcrumb.jsx", "components/Header/HeaderDumb.jsx"nents/screens/searchResult.jsx"],
-  "exclude": ["node_modules"]
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@hooks/*": ["./hooks/*"],
+            "@components/*": ["./components/*"],
+            "@styles/*": ["./styles/*"],
+            "@public/*": ["./public/*"]
+        },
+        "target": "es5",
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "noEmit": true,
+        "esModuleInterop": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "jsx": "preserve",
+        "incremental": true
+    },
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+    "exclude": ["node_modules"]
 }
