@@ -8,7 +8,7 @@ const authorFullName = packageJson.author.split(" ")
 const firstName: string = authorFullName[0]
 const lastName: string = authorFullName[1]
 
-type filters = {
+interface filters {
     id: string
     name: string
     type: string
@@ -21,7 +21,7 @@ type filters = {
     ]
 }
 
-type results = {
+interface results {
     price: number
     currency_id: string
     id: string
@@ -36,6 +36,17 @@ type results = {
         city_name: string
     }
 }
+;[]
+
+interface items {
+    id: string
+    title: string
+    price: number
+    picture: string
+    condition: string
+    free_shipping: string
+    city: string
+}[]
 
 //function for price section of endpoint
 const splitPrice = (price: number, currency: string) => {
@@ -63,8 +74,8 @@ const formatEndPointSearch = (data: any) => {
               )
             : undefined)(categoryFiltered)
 
-    const resultado = (({ results }) =>
-        results?.map((value: results) => {
+    const resultado: items = (({ results }) =>
+        results.map((value: results) => {
             const price = value.price
 
             const currency = value.currency_id
@@ -78,7 +89,7 @@ const formatEndPointSearch = (data: any) => {
                 free_shipping: value.shipping.free_shipping,
                 city: value.address.state_name,
             }
-        }))(data!)
+        }))(data)
 
     return {
         response: {

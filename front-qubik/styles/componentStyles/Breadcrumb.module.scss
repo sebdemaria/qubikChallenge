@@ -1,0 +1,14 @@
+@import "styles/sass-utils/indexUtils.scss";
+
+.breadcrumb {
+    color: $font-color;
+    font-size: 14px;
+    margin: $value-16px 0;
+}
+
+@media (max-width: $sm) {
+    .breadcrumb {
+        font-size: 11px;
+        margin-right: 1em;
+    }
+}
