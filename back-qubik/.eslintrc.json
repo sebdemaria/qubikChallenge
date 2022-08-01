@@ -16,7 +16,9 @@
     },
     "rules": {
         "no-unused-vars": 0,
-        "@typescript-eslint/no-explicit-any": ["off"]
-
+        "@typescript-eslint/no-explicit-any": [
+            "off"
+        ],
+        "strictNullChecks": false
     }
 }
