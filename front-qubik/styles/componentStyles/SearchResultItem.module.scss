@@ -1,0 +1,92 @@
+@import "styles/sass-utils/indexUtils.scss";
+
+.item {
+    cursor: pointer;
+    padding: 16px;
+
+    &:not(:last-child) {
+        border-bottom: 1px solid $lightGray;
+    }
+}
+
+.producto {
+    align-items: center;
+    position: relative;
+
+    .thumbnailContainer {
+        margin: 16px;
+
+        .thumbnail {
+            border-radius: 4px;
+        }
+    }
+
+    .detalles {
+        margin-bottom: 1em;
+
+        .precioYShipping {
+            display: inline-flex;
+            align-items: $justify-align-center;
+
+            .precio {
+                font-size: 24px;
+            }
+        }
+
+        .articulo {
+            font-size: $title-search-size;
+            padding-top: $value-32px;
+        }
+    }
+
+    .city {
+        font-size: 13px;
+        position: absolute;
+        right: 5em;
+        text-align: end;
+        top: 32px;
+    }
+}
+
+@media (max-width: $md) {
+    .producto {
+        .detalles {
+            .precioYShipping {
+                .precio {
+                    font-size: 17px;
+                }
+            }
+
+            .articulo {
+                font-size: 13px;
+            }
+        }
+
+        .city {
+            right: 0.5em;
+            top: 15px;
+        }
+    }
+}
+
+@media (max-width: $sm) {
+    .producto {
+        .detalles {
+            margin: 1em 0;
+
+            .precioYShipping {
+                .precio {
+                    font-size: 17px;
+                }
+            }
+
+            .articulo {
+                font-size: 13px;
+            }
+        }
+
+        .city {
+            font-size: 12px;
+        }
+    }
+}
