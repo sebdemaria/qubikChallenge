@@ -1,8 +1,8 @@
-import { useState } from "react";
 import { useRouter } from "next/router";
+import { useState } from "react";
 
 export const useForm = (
-    initialState: string = ""
+    initialState = ""
 ): [
     () => void,
     string,
@@ -19,12 +19,12 @@ export const useForm = (
         setValue((target as HTMLInputElement).value);
     };
 
-    const reset = () => {
+    const reset = (): void => {
         setValue(initialState);
     };
 
     //function to send prop with input value for product listing
-    const getInputDataForSearch = () => {
+    const getInputDataForSearch = (): void => {
         router.push(`/items?search=${value.replace(" ", "%20")}`);
         reset();
     };

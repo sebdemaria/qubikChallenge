@@ -1,7 +1,7 @@
-import { HeaderDumb } from "./HeaderDumb";
 import { useForm } from "@hooks/useForm";
+import { HeaderDumb } from "./HeaderDumb";
 
-const Header = (): React.ReactElement => {
+const Header = (): JSX.Element => {
     const [getInputDataForSearch, value, handleInputChange] = useForm();
 
     return (

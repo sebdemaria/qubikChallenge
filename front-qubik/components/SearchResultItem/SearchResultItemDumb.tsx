@@ -25,7 +25,7 @@ interface Price {
 export const SearchResultItemDumb = ({
     item,
     formatCurrency,
-}: SearchResultItemDumbProps) => {
+}: SearchResultItemDumbProps): JSX.Element => {
     return (
         <div className={styles.item}>
             <Link style={{ textDecoration: "none" }} href={`/items/${item.id}`}>

@@ -4,7 +4,7 @@ import badRequest from "public/assets/400.png";
 
 import styles from "styles/screenStyles/HttpScreens.module.scss";
 
-export const BadRequest = () => {
+export const BadRequest = (): JSX.Element => {
     return (
         <>
             <Head>

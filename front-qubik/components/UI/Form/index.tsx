@@ -6,7 +6,7 @@ interface FormProps {
     children: React.ReactNode;
 }
 
-const Form = ({ handlesubmit, children }: FormProps) => {
+const Form = ({ handlesubmit, children }: FormProps): JSX.Element => {
     return (
         <form onSubmit={handlesubmit} className={styles.form}>
             {children}

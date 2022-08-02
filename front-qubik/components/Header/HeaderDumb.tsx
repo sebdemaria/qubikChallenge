@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import Button from "../UI/Button";
 import Form from "../UI/Form";
 import Input from "../UI/Input";
-import Button from "../UI/Button";
 
 import logo from "@public/assets/logo2x.png";
 import searchImg from "@public/assets/search.png";
@@ -22,7 +22,7 @@ export const HeaderDumb = ({
     inputData,
     handleInputChange,
     value,
-}: HeaderProps): React.ReactElement => {
+}: HeaderProps): JSX.Element => {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 

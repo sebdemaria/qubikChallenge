@@ -21,7 +21,7 @@ interface BreadcrumbProps {
     };
 }
 
-const Breadcrumb = ({ result }: BreadcrumbProps) => {
+const Breadcrumb = ({ result }: BreadcrumbProps): JSX.Element => {
     const { categories } = result;
 
     return (

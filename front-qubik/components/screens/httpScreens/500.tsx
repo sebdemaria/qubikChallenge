@@ -4,7 +4,7 @@ import serverError from "public/assets/500.png";
 
 import styles from "styles/screenStyles/HttpScreens.module.scss";
 
-export const ServerError = () => {
+export const ServerError = (): JSX.Element => {
     return (
         <>
             <Head>

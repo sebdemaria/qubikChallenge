@@ -24,7 +24,7 @@ interface SearchResultProps {
     };
 }
 
-export const SearchResult = ({ result }: SearchResultProps) => {
+export const SearchResult = ({ result }: SearchResultProps): JSX.Element => {
     return (
         <>
             <div className="container mb-5 px-0">

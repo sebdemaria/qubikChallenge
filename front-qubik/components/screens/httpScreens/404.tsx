@@ -4,7 +4,7 @@ import notFound from "public/assets/404.png";
 
 import styles from "styles/screenStyles/HttpScreens.module.scss";
 
-export const NotFound = () => {
+export const NotFound = (): JSX.Element => {
     return (
         <>
             <Head>

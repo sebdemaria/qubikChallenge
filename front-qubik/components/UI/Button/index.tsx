@@ -21,7 +21,7 @@ const Button = ({
     moreClass = "",
     children,
     ...props
-}: ButtonProps) => {
+}: ButtonProps): JSX.Element => {
     return (
         <button
             role="button"

@@ -22,7 +22,7 @@ const Input = ({
     onchange = () => {
         return;
     },
-}: InputProps): React.ReactElement => {
+}: InputProps): JSX.Element => {
     return (
         <input
             /*

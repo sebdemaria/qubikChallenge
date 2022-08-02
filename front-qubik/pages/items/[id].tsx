@@ -1,13 +1,14 @@
 import Head from "next/head";
 
-import { SearchResult } from "@components/screens/SearchResult";
+import SearchByIdResult from "components/screens/SearchByIdResult";
+
 import { BadRequest } from "components/screens/httpScreens/400";
 import { NotFound } from "components/screens/httpScreens/404";
 import { ServerError } from "components/screens/httpScreens/500";
 import { getSearch } from "http/services/httpItems";
 import { GetServerSideProps } from "next";
 
-interface ItemsProps {
+interface ItemDetailProps {
     response: {
         status: number;
         statusText: string;
@@ -15,29 +16,26 @@ interface ItemsProps {
             name: string;
             lastname: string;
         };
-        categories: [];
-        items: {
+        item: {
             id: string;
             title: string;
             price: { currency: string; amount: number };
             picture: string;
             condition: string;
-            free_shipping: string;
-            city: string;
-        }[];
+            free_shipping: boolean;
+            sold_quantity: number;
+            description: string;
+            category: string;
+        };
     };
-    search: string;
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
-    const { search } = query;
+    const { id } = query;
 
     const httpStatus = [404, 400, 500];
 
-    const { response } = await getSearch(
-        process.env.BASE_URL!,
-        `/items?q=${search}`
-    );
+    const { response } = await getSearch(process.env.BASE_URL!, `/items/${id}`);
 
     return {
         props: {
@@ -46,12 +44,11 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
             )
                 ? response.data
                 : response,
-            search,
         }, // will be passed to the page component as props
     };
 };
 
-const Items = ({ response, search }: ItemsProps): JSX.Element => {
+const ItemDetail = ({ response }: ItemDetailProps): JSX.Element => {
     const httpComponents = {
         400: <BadRequest />,
         404: <NotFound />,
@@ -61,14 +58,14 @@ const Items = ({ response, search }: ItemsProps): JSX.Element => {
     return response.status == 200 ? (
         <>
             <Head>
-                <title>Mercadolibre - {String(search)}</title>
-                <meta name="description" content="Resultado busqueda" />
+                <title>Mercadolibre - {response.item.title}</title>
+                <meta name="description" content="result busqueda" />
             </Head>
-            <SearchResult result={response} />
+            <SearchByIdResult result={response} />
         </>
     ) : (
         httpComponents[response.status as keyof typeof httpComponents]
     );
 };
 
-export default Items;
+export default ItemDetail;

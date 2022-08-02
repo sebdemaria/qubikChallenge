@@ -16,14 +16,14 @@ interface Price {
     price: { currency: string; amount: number };
 }
 
-export const formatCurrency = ({ price }: Price) => {
+export const formatCurrency = ({ price }: Price): string => {
     return new Intl.NumberFormat("es-AR", {
         style: "currency",
         currency: price.currency,
     }).format(price.amount);
 };
 
-const SearchResultItem = ({ item }: SearchResultItemProps) => {
+const SearchResultItem = ({ item }: SearchResultItemProps): JSX.Element => {
     return <SearchResultItemDumb item={item} formatCurrency={formatCurrency} />;
 };
 
